@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7fc;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: #004aad;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logout {
+  background-color: white;
+  color: #004aad;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout:hover {
+  background-color: #e6e6e6;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #e6f0fa;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #004aad;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  background-color: white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border-left: 5px solid transparent;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  background-color: #dceeff;
+  border-left: 5px solid #004aad;
+}
+
+.project-details {
+  flex: 1;
+  padding: 40px;
+  background-color: white;
+}
+
+.project-details p {
+  font-size: 18px;
+  color: #444;
+}
+
+.project-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #f9fcff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.project-details th,
+.project-details td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.project-details th {
+  background-color: #d6eaff;
+  color: #004aad;
+  font-weight: bold;
+}
+
+.project-details td {
+  font-size: 16px;
+  color: #333;
+}
