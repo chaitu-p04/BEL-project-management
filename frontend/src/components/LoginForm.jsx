@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import belLogo from '../assets/bel_logo.jpg';
 import './LoginForm.css';
 
 function LoginForm() {
+  const navigate = useNavigate();
+
   const [showStaffId, setShowStaffId] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
@@ -45,11 +47,15 @@ function LoginForm() {
       });
 
       if (response.data.success) {
-        alert('Login successful!');
-        // Redirect or next step
-      } else {
-        alert(response.data.message || 'Login failed.');
-      }
+  alert('Login successful!');
+  
+
+  navigate('/dashboard'); // ✅ redirect to dashboard
+} else {
+  alert(response.data.message || 'Login failed.');
+}
+
+      
     } catch (err) {
       if (err.response && err.response.status === 401) {
         alert("Invalid credentials");

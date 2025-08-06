@@ -22,8 +22,12 @@ router.post('/login', async (req, res) => {
     if (!match) {
       return res.status(401).json({ success: false, message: 'Incorrect password.' });
     }
+res.status(200).json({
+        success: true,
+        message: 'Login successful',
+        user_id: user.id, // ✅ This is what your frontend needs
+      });
 
-    res.json({ success: true, message: 'Login successful.' });
 
   } catch (err) {
     console.error(err.message);

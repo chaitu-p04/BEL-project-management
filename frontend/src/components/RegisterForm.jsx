@@ -58,6 +58,7 @@ function RegisterForm() {
 
       if (response.data.success) {
         alert(response.data.message); // e.g., "User registered successfully"
+        localStorage.setItem("userId", response.data.user_id); 
         navigate('/');
       } else {
         alert(response.data.message); // e.g., "User already exists"

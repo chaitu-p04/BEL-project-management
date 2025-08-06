@@ -1,0 +1,136 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  staff_id VARCHAR(20) UNIQUE NOT NULL,
+  password VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE projects (
+  id SERIAL PRIMARY KEY,
+  project_name VARCHAR(255),
+  start_date DATE,
+  end_date DATE,
+  customer_name VARCHAR(255),
+  customer_address TEXT,
+  customer_contact TEXT,
+  order_value NUMERIC,
+  duration VARCHAR(100),
+  kickoff_date DATE,
+  kickoff_status TEXT
+);
+CREATE TABLE project_sales (
+  id SERIAL PRIMARY KEY,
+  project_id INTEGER REFERENCES projects(id),
+  order_acceptance TEXT,
+  customer_indemnity TEXT,
+  customer_pbg TEXT,
+  contract_creation TEXT,
+  contract_approval TEXT,
+  sale_order_creation TEXT,
+  sale_order_release TEXT,
+  contract_number_date TEXT,
+  sale_order_number_date TEXT,
+  spare1 TEXT,
+  spare2 TEXT
+);
+CREATE TABLE project_stakeholders (
+  id SERIAL PRIMARY KEY,
+  project_id INTEGER REFERENCES projects(id),
+  project_manager TEXT,
+  team_members TEXT,
+  architect_team TEXT,
+  sales_team TEXT,
+  qa_team TEXT,
+  purchase_team TEXT,
+  finance_team TEXT
+);
+
+ALTER TABLE project_stakeholders
+ADD COLUMN customer_name VARCHAR(100),
+ADD COLUMN customer_address TEXT,
+ADD COLUMN customer_contact VARCHAR(50);
+
+
+CREATE TABLE project_parts (
+  id SERIAL PRIMARY KEY,
+  project_id INTEGER REFERENCES projects(id),
+  item_name TEXT,
+  part_number TEXT
+);
+
+CREATE TABLE project_bom (
+  id SERIAL PRIMARY KEY,
+  project_id INTEGER REFERENCES projects(id),
+  bom_details TEXT,
+  production_order TEXT,
+  mrp_run TEXT
+);
+
+form fields:
+according to schema  these are the form fields:
+ projects (
+
+  project_name VARCHAR(255),
+  start_date DATE,
+  end_date DATE,
+  customer_name VARCHAR(255),
+  customer_address TEXT,
+  customer_contact TEXT,
+  order_value NUMERIC,
+  duration VARCHAR(100),
+  kickoff_date DATE,
+  kickoff_status TEXT
+);
+CREATE TABLE project_sales (
+  id SERIAL PRIMARY KEY,
+  project_id INTEGER REFERENCES projects(id),
+  order_acceptance TEXT,
+  customer_indemnity TEXT,
+  customer_pbg TEXT,
+  contract_creation TEXT,
+  contract_approval TEXT,
+  sale_order_creation TEXT,
+  sale_order_release TEXT,
+  contract_number_date TEXT,
+  sale_order_number_date TEXT,
+  spare1 TEXT,
+  spare2 TEXT
+);
+project_stakeholders (
+
+  project_manager TEXT,
+  team_members TEXT,
+  architect_team TEXT,
+  sales_team TEXT,
+  qa_team TEXT,
+  purchase_team TEXT,
+  finance_team TEXT
+ 
+
+
+ customer_name VARCHAR(100),
+ customer_address TEXT,
+customer_contact VARCHAR(50)); 
+
+
+ project_parts ( 
+
+  item_name TEXT,
+  part_number TEXT
+);
+
+project_bom (
+
+  bom_details TEXT,
+  production_order TEXT,
+  mrp_run TEXT
+);
+
+
+
+
+
+
+
+
+
