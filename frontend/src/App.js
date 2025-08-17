@@ -7,6 +7,7 @@ import ProjectPage from './components/ProjectPage';
 import RegisterForm from './components/RegisterForm';
 import ResetPassword from './components/ResetPassword';
 import SuccessMessage from './components/SuccessMessage';
+import DashboardButton from './components/DashboardButton';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/project/:id" element={<ProjectDetails />} />
         <Route path="/add-projects" element={<AddProject />} />
         <Route path="/projects/:id" element={<ProjectPage />} />
+        <Route path="/dashboard-charts" element={<DashboardButton />} />
       </Routes>
     </Router>
   );
